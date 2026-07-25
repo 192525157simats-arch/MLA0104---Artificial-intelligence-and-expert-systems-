@@ -1,0 +1,39 @@
+AlphaBeta(depth, nodeIndex, maximizingPlayer, values, alpha, beta)
+
+1. If depth == maximum depth:
+       Return value of leaf node
+
+2. If maximizingPlayer:
+
+       best = -∞
+
+       For each child node:
+
+             val = AlphaBeta(depth+1, childIndex, False, values, alpha, beta)
+
+             best = max(best, val)
+
+             alpha = max(alpha, best)
+
+             If beta <= alpha:
+                    Break   // Beta Cutoff (pruning)
+
+       Return best
+
+3. Else (minimizing player):
+
+       best = +∞
+
+       For each child node:
+
+             val = AlphaBeta(depth+1, childIndex, True, values, alpha, beta)
+
+             best = min(best, val)
+
+             beta = min(beta, best)
+
+             If beta <= alpha:
+                    Break   // Alpha Cutoff (pruning)
+
+       Return best
+   
