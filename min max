@@ -1,0 +1,17 @@
+MiniMax(depth, nodeIndex, isMaximizingPlayer, values)
+
+1. If depth == maximum depth:
+       Return value of leaf node
+
+2. If isMaximizingPlayer is TRUE:
+
+       Return maximum of
+            MiniMax(depth + 1, nodeIndex*2, False, values)
+            MiniMax(depth + 1, nodeIndex*2 + 1, False, values)
+
+3. Else (Minimizing Player):
+
+       Return minimum of
+            MiniMax(depth + 1, nodeIndex*2, True, values)
+            MiniMax(depth + 1, nodeIndex*2 + 1, True, values)
+            
